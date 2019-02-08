@@ -4,7 +4,7 @@ public class Product{
     private int price;
     private String name;
     private int quantity;
-    private float sellingPrince;
+    private int FIXED_QTE =5;
 
     public Product() {
     }
@@ -52,11 +52,12 @@ public class Product{
                 '}';
     }
 
-    public float sells(float percentage){
-        return sellingPrince = price*=(5+percentage);
-    }
-
     public int asset(){
         return price*quantity;
+    }
+
+    public float sellPackage(float percentage, int double_quantity){
+        quantity -= FIXED_QTE*double_quantity;
+        return price*double_quantity*FIXED_QTE*(1+percentage);
     }
 }
