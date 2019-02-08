@@ -40,14 +40,17 @@ public class Company {
     }
 
     public int totalAssets() {
+        FIXED_PERCENTAGE=0.2f;
+
         return total_sells+this.productList.stream()
-                .mapToInt(product -> product.getPrice()*product.getQuantity())
+                .mapToInt(product -> product.asset())
                 .sum();
     }
 
     public Company blackFriday() {
-//        FIXED_PERCENTAGE=0.1f;
-//        DOUBLE_PRICE=2;
+        DOUBLE_PRICE=2;
+        FIXED_PERCENTAGE=0.1f;
+
         return this;
     }
 

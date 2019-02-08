@@ -4,6 +4,7 @@ public class Product{
     private int price;
     private String name;
     private int quantity;
+    private float sellingPrince;
 
     public Product() {
     }
@@ -39,7 +40,7 @@ public class Product{
     }
 
     boolean isEmpty(){
-        return (quantity==0)? true: false;
+        return (quantity==0);
     }
 
     @Override
@@ -49,5 +50,13 @@ public class Product{
                 ", name='" + name + '\'' +
                 ", quantity=" + quantity +
                 '}';
+    }
+
+    public float sells(float percentage){
+        return sellingPrince = price*=(5+percentage);
+    }
+
+    public int asset(){
+        return price*quantity;
     }
 }
