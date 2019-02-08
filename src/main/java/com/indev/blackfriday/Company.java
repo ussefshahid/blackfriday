@@ -31,19 +31,10 @@ public class Company {
         productList.add(new Product(quantity, capsule, QUANTITY));
     }
 
-    public Company to(int i) {
-        return this;
-    }
-
-    public float computeBenefit() {
-        return 0;
-    }
-
     public int totalAssets() {
         DOUBLE_QUANTITY=1;
         FIXED_PERCENTAGE=0.2f;
 
-        System.out.println(total_sells+" / "+productList+" ###");
         return total_sells+this.productList.stream()
                 .mapToInt(product -> product.asset())
                 .sum();
